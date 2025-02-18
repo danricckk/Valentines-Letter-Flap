@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Envelope-VD</title>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes shadow-float {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(0.9); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-[#EEECEE] flex justify-center items-center min-h-screen">
+
+    <!-- Main Box -->
+    <div class="relative flex flex-col items-center">
+        <!-- Envelope Shadow -->
+        <div class="absolute bottom-[-10px] w-56 h-8 bg-black opacity-50 rounded-full blur-lg animate-[shadow-float_3s_infinite]"></div>
+
+        <!-- Envelope with Float -->
+        <div class="relative w-80 h-72 flex justify-center items-end animate-[float_3s_infinite]">
+            <!-- Envelope Bottom -->
+            <div class="bg-[#FFC4D8] w-full h-52 relative shadow-2xl border-b-2 border-gray-500"></div>
+
+            <!-- Letter -->
+            <div id="letter" 
+                class="absolute bg-[#f8f5f8] w-72 h-48 p-4 transition-all duration-700 transform translate-y-full opacity-0 invisible shadow-2xl rounded-lg z-10 flex flex-col justify-start">
+                <div class="text-center">
+                    <p class="text-black font-bold text-lg font-mono z-20">Happy Valentine's Day</p>
+                    <!-- Gift (GIF) -->
+                    <img id="gift" src="mochi-cat.gif" alt="GIF" class="max-w-full h-auto mx-auto w-32 h-32 md:w-40 md:h-40 cursor-pointer">
+                </div>
+            </div>
+
+            <!-- Envelope Top -->
+            <div id="flap" class="absolute bg-[#F8AAB2] w-full h-28 top-0 origin-bottom transition-transform duration-700 flex justify-center items-center shadow-lg">
+                <!-- Open Button -->
+                <button id="open" class="bg-[#F8909A] text-white font-bold py-3 px-6 rounded shadow-xl text-lg">
+                    Open
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js">
+       
+    </script>
+    
+
+</body>
+</html>
